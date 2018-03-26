@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.emree.thebeautifulapp.MainActivity">
+
+    <Button
+        android:id="@+id/attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/attack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAttack"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/tv_heroName"
+        android:layout_width="134dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/heroName"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintEnd_toEndOf="@+id/create"
+        app:layout_constraintStart_toStartOf="@+id/create"
+        app:layout_constraintTop_toBottomOf="@+id/create" />
+
+    <TextView
+        android:id="@+id/tv_power"
+        android:layout_width="118dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/power"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintEnd_toEndOf="@+id/create"
+        app:layout_constraintStart_toStartOf="@+id/create"
+        app:layout_constraintTop_toBottomOf="@+id/tv_health" />
+
+    <TextView
+        android:id="@+id/tv_stamina"
+        android:layout_width="118dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/stamina"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintEnd_toEndOf="@+id/create"
+        app:layout_constraintStart_toStartOf="@+id/create"
+        app:layout_constraintTop_toBottomOf="@+id/tv_power" />
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="@string/create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_health"
+        android:layout_width="123dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/health"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintEnd_toEndOf="@+id/create"
+        app:layout_constraintStart_toStartOf="@+id/create"
+        app:layout_constraintTop_toBottomOf="@+id/tv_heroName" />
+
+    <Button
+        android:id="@+id/heal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/heal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAttack"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <EditText
+        android:id="@+id/editTextAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="216dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/powerOfAttack"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/create"
+        app:layout_constraintStart_toStartOf="@+id/create"
+        app:layout_constraintTop_toBottomOf="@+id/create" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/messageText"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintEnd_toEndOf="@+id/create"
+        app:layout_constraintStart_toStartOf="@+id/create"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAttack" />
+
+    <Button
+        android:id="@+id/go"
+        android:layout_width="53dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="179dp"
+        android:text="GO!"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAttack"
+        app:layout_constraintEnd_toStartOf="@+id/tv_power"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

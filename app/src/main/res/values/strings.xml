@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TheBeautifulApp</string>
+    <string name="attack">Attack</string>
+    <string name="heroName">Name of Hero</string>
+    <string name="power">Power of Hero</string>
+    <string name="stamina">Stamina of Hero</string>
+    <string name="create">Create Hero</string>
+    <string name="health">Health of Hero</string>
+    <string name="heal">Heal</string>
+    <string name="powerOfAttack">Enter amount of attack</string>
+    <string name="messageText">You can see action in here !</string>string>
+</resources>
