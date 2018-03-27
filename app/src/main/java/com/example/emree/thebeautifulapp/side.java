@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class side extends AppCompatActivity {
 
     TextView tv_mesaj;
@@ -21,10 +23,17 @@ public class side extends AppCompatActivity {
         Intent i=getIntent();
         String mesaj=i.getStringExtra("Message");
         tv_mesaj.setText(mesaj);
-        gl_kartlar.addView(new kart(this));
+        ArrayList<kart> kartlar=new ArrayList<kart>();
 
-        random=(int) Math.random()*8;
-
-
+        for (int x=0;x<16;x++)
+        {
+            int b=(int) ((Math.random()*16)%8);
+            kart kart=new kart(this,b);
+            kartlar.add(kart);
+        }
+        for (int x=0; x<16;x++)
+        {
+            gl_kartlar.addView(kartlar.get(x));
+        }
     }
 }
