@@ -82,4 +82,16 @@ public class kart extends android.support.v7.widget.AppCompatButton {
         }
 
     }
+
+    public void back()
+    {
+        setBackground(this.backgroundD);
+        this.isBack=true;
+    }
+
+    public void front()
+    {
+        setBackground(this.imageD);
+        this.isBack=false;
+    }
 }

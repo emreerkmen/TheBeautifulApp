@@ -22,6 +22,8 @@ public class side extends AppCompatActivity implements View.OnClickListener{
     int random;
     int sonKart;
     final Handler handler = new Handler();
+    int matchCount=0;
+    int missCount=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class side extends AppCompatActivity implements View.OnClickListener{
         Intent i=getIntent();
         String mesaj=i.getStringExtra("Message");
         tv_mesaj.setText(mesaj);
-        ArrayList<kart> kartlar=new ArrayList<kart>();
+        final ArrayList<kart> kartlar=new ArrayList<kart>();
 
 
 
@@ -54,38 +56,64 @@ public class side extends AppCompatActivity implements View.OnClickListener{
         {
             gl_kartlar.addView(kartlar.get(x));
         }
+
+        for (kart k:kartlar)
+        {
+            k.turn();
+        }
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                for (kart k:kartlar)
+                {
+                    k.turn();
+                }
+            }
+        },2000);
     }
 
     @Override
     public void onClick(View view) {
+
         final kart k=(kart) view;
-        kart tempKart= (kart) findViewById(sonKart);
+        final kart tempKart= (kart) findViewById(sonKart);
         if(!k.match)
         {
-            k.turn();
+            k.front();
         }
         if(!k.isBack)
         {
-            if (k.imageId==tempKart.imageId)
+            if (k.imageId==tempKart.imageId && k.getId()!=tempKart.getId())
             {
                 k.match=true;
                 tempKart.match=true;
+                tempKart.front();
+                matchCount++;
+
             }
             else
             {
                 sonKart=k.getId();
+                missCount++;
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(!k.match)
+                        if(!k.match && !k.isBack)
                         {
-                            k.turn();
+                            k.back();
                         }
                     }
                 },1000);
 
+
             }
 
+        }
+
+        if (matchCount==8)
+        {
+            tv_mesaj.setText("Tebrikler "+missCount+" hata ile oyunu tamamladınız.");
         }
 
     }
