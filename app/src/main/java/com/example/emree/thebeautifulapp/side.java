@@ -24,10 +24,16 @@ public class side extends AppCompatActivity implements View.OnClickListener{
     final Handler handler = new Handler();
     int matchCount=0;
     int missCount=0;
+    int[] kartArray=new int[16];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null){
+
+        }else{
+
+        }
         setContentView(R.layout.activity_side);
         tv_mesaj=(TextView) findViewById(R.id.tv_mesaj);
         gl_kartlar=(GridLayout) findViewById(R.id.gl_kartlar);
@@ -118,4 +124,9 @@ public class side extends AppCompatActivity implements View.OnClickListener{
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState
+    }
 }
