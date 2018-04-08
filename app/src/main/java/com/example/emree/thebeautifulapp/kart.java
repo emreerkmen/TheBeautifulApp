@@ -21,12 +21,14 @@ public class kart extends android.support.v7.widget.AppCompatButton {
     public boolean match=false;
     public @SuppressLint("RestrictedApi") Drawable imageD;
     public @SuppressLint("RestrictedApi") Drawable backgroundD;
+    public int image;
 
     @SuppressLint("RestrictedApi")
     public kart(Context context, int image) {
         super(context);
         this.backgroundId=R.drawable.aglobal;
         setId(image);
+        this.image=image;
 
 
 
@@ -70,44 +72,45 @@ public class kart extends android.support.v7.widget.AppCompatButton {
     }
 
     @SuppressLint("RestrictedApi")
-    public kart(Context context, int image, boolean isBack, boolean match) {
+    public kart(Context context, kartInfo k) {
         super(context);
-        this.isBack=isBack;
-        this.match=match;
+        this.isBack=k.isBack();
+        this.match=k.isMatch();
         this.backgroundId=R.drawable.aglobal;
-        setId(image);
+        setId(k.getImageId());
+        this.image=k.getImageId();
 
 
 
-        if(image%8==0)
+        if(k.getImageId()%8==0)
         {
             this.imageId=R.drawable.a1;
         }
-        if(image%8==1)
+        if(k.getImageId()%8==1)
         {
             this.imageId=R.drawable.a2;
         }
-        if(image%8==2)
+        if(k.getImageId()%8==2)
         {
             this.imageId=R.drawable.a3;
         }
-        if(image%8==3)
+        if(k.getImageId()%8==3)
         {
             this.imageId=R.drawable.a4;
         }
-        if(image%8==4)
+        if(k.getImageId()%8==4)
         {
             this.imageId=R.drawable.a5;
         }
-        if(image%8==5)
+        if(k.getImageId()%8==5)
         {
             this.imageId=R.drawable.a6;
         }
-        if(image%8==6)
+        if(k.getImageId()%8==6)
         {
             this.imageId=R.drawable.a7;
         }
-        if(image%8==7)
+        if(k.getImageId()%8==7)
         {
             this.imageId=R.drawable.a8;
         }
@@ -117,13 +120,13 @@ public class kart extends android.support.v7.widget.AppCompatButton {
 
         if(isBack)
         {
-            setBackground(this.imageD);
-            isBack=false;
+            setBackground(this.backgroundD);
+            //isBack=false;
         }
         else
         {
-            setBackground(this.backgroundD);
-            isBack=true;
+            setBackground(this.imageD);
+            //isBack=true;
         }
 
     }
