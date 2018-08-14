@@ -30,8 +30,8 @@ public class side extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_side);
-        tv_mesaj=(TextView) findViewById(R.id.tv_mesaj);
-        gl_kartlar=(GridLayout) findViewById(R.id.gl_kartlar);
+        tv_mesaj= findViewById(R.id.tv_mesaj);
+        gl_kartlar= findViewById(R.id.gl_kartlar);
         Intent i=getIntent();
         String mesaj=i.getStringExtra("Message");
         tv_mesaj.setText(mesaj);
@@ -136,7 +136,7 @@ public class side extends AppCompatActivity implements View.OnClickListener{
                     }
                 }
                 tempKart.match=true;
-                
+
                 for (int y=0;y<16;y++) {
                     if (kartlarInfo.get(y).imageId == tempKart.image) {
                         kartlarInfo.get(y).setBack(false);
