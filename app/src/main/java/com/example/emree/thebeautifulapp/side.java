@@ -35,7 +35,7 @@ public class side extends AppCompatActivity implements View.OnClickListener{
         Intent i=getIntent();
         String mesaj=i.getStringExtra("Message");
         tv_mesaj.setText(mesaj);
-
+        //test comment
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null){
             kartlarInfo=savedInstanceState.getParcelableArrayList("kartlarInfo");
